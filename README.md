@@ -1,4 +1,4 @@
-# Sentiment-Analysis-
+# Sentiment-Analysis
 DATA 5100 project
 
 Member: Duong, Priyanka, Ting-Yu 
