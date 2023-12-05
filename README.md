@@ -42,9 +42,3 @@ https://medium.com/analytics-vidhya/nlp-getting-started-with-sentiment-analysis-
 https://medium.com/@skillcate/sentiment-analysis-project-with-traditional-ml-nlp-349185bf98dd 
 
 F. Jemai, M. Hayouni and S. Baccar, "Sentiment Analysis Using Machine Learning Algorithms," 2021 International Wireless Communications and Mobile Computing (IWCMC), Harbin City, China, 2021, pp. 775-779, doi: 10.1109/IWCMC51323.2021.9498965.
-
-Method of code sharing: GitHub and OneDrive 
-
-Meeting times: 4PM standing appointment on Fridays 
-
-Next step: We will conduct the initial data cleaning, and we will split the dataset, with each person responsible for a portion while simultaneously performing data cleaning. 
