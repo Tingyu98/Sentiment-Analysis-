@@ -1,37 +1,60 @@
 # Sentiment-Analysis
-DATA 5100 project
 
-Member: Duong, Priyanka, Ting-Yu 
+## Overview
+This project applies **Natural Language Processing (NLP)** and **machine learning** techniques to analyze restaurant reviews from Yelp. By extracting a subset of reviews from the large-scale Yelp dataset, the study explores sentiment drivers and builds predictive models for automated classification of positive and negative sentiments. The analysis provides insights into customer experiences and service quality, supporting restaurants and platforms in enhancing customer satisfaction.
 
+## Goal
+* Identify words and phrases that drive positive or negative customer sentiment.
+* Build machine learning models to predict sentiment from textual reviews.
+* Automate sentiment classification for scalability and adaptability to new data.
+* Provide actionable insights to help businesses improve service and customer experience.
+* Dataset link: https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset 
 
-## Problem statement 
+## Methodology
 
-Our objective is to identify words in Yelp reviews that are indicative of an exceptionally liked restaurant business, and create a model that could accurately automate this process and adapt to new data inputs. In this process, Yelp reviews are transformed into numerical vectors using Natural Language Toolkit (NLTK)'s vectorization techniques, which convert the textual data into a format suitable for machine learning models. Logistic regression is then employed to analyze the sentiment expressed in the reviews. The model is trained on a labeled dataset, learning to predict whether a review conveys positive or negative sentiment based on the vectorized representation of the text. By combining NLTK's powerful text processing capabilities with logistic regression's ability to make binary sentiment predictions, we can gain valuable insights into the overall sentiment of Yelp reviews, enabling data-driven decisions or apply in other business applications. 
-
-## Data sources 
-
-The Kaggle folder contains 5 json files that display information about the business, check-in, review, tip and user. We will perform a minimal amount of cleaning, but preprocessing is necessary due to its size and to select relevant variables. Two datasets, business and review, are combined to create a comprehensive single dataset. 
-
-Dataset link: https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset 
-
-## Analytical approach 
-
-* Preprocessing (filtering, merging, text formatting) 
-* Exploratory data analysis (EDA)
-* Vectorization
-* Model Training 
-* Prediction and regression analysis
+* **Data Sources** – Yelp Open Dataset (Kaggle), combining business and review JSON files into a comprehensive dataset (~6M reviews total, 150K selected for training/analysis). 
+* **Data Preparation**
+  * Filtering reviews for restaurants only.
+  * Cleaning and preprocessing text (tokenization, lowercasing, stop-word removal, lemmatization).
+  * Merging metadata (business category + review text).
+* **Exploratory Data Analysis (EDA)**
+  * Distribution of review ratings, business categories, and text length.
+  * Visualization of word frequencies and sentiment-related terms.
+  * Identification of class imbalance (positive vs negative reviews).
+* **Feature Engineering** - TF-IDF vectorization using NLTK & scikit-learn.
+* **Modeling**
+  * Logistic Regression – Baseline model for binary sentiment prediction.
+  * XGBoost – Gradient boosting classifier optimized via hyperparameter tuning.
+* **Evaluation**
+  * Performance measured using F1-score, accuracy, and precision-recall tradeoffs.
+  * Feature importance analysis to identify key drivers of sentiment.
+* **Tools & Libraries**
+  * Python (pandas, numpy)
+  * NLP: NLTK, scikit-learn
+  * Visualization: matplotlib, seaborn
+  * Modeling: XGBoost, Logistic Regression
   
-## Solution technologies 
+## Results & Insights
 
-* json
-* pandas
-* numpy
-* matplotlib
-* seaborn
-* nltk
-* sklearn
-   
+* **Model Performance** –
+  * Logistic Regression with TF-IDF achieved strong baseline results.
+  * XGBoost with TF-IDF reached 94% F1-score, outperforming logistic regression.
+* **Key Drivers of Negative Sentiment** – Terms such as “time” and “order” were strongly associated with poor customer experiences (e.g., long wait times, incorrect orders).
+* **Scalability** – The trained models generalize well and adapt to new incoming review data, demonstrating robustness for real-world deployment.
+
+## Application / Recommendation
+* **Business Use Cases**
+  * Restaurants can monitor real-time sentiment to identify service pain points.
+  * Platforms like Yelp can automate review flagging and sentiment summaries.
+
+* **Recommendations**
+  * Focus on reducing service delays and order issues, as these terms drive negative sentiment.
+  * Integrate sentiment dashboards for managers to act on insights proactively.
+ 
+## Future Work
+  * Expand feature set by integrating word embeddings (Word2Vec, BERT) for richer semantic understanding.
+  * Extend to multi-class sentiment classification (very positive → very negative).
+  * Deploy as a real-time application (API or dashboard) for automated monitoring.
 
 ## Citations
 
